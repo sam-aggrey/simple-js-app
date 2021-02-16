@@ -58,3 +58,23 @@ let pokemonList=[
     
 ];
 
+
+
+for (let i=0; i < pokemonList.length; i++){
+    
+// The loop first look for the statement in the first if statement and check if its true as iitialized above
+// if true then run the code it should run the code in that bracket. If not true, then move to the next stamemet
+    
+  if (pokemonList[i].height < 2){
+    document.write(pokemonList[i].name + ": height is : " + pokemonList[i].height  +  " ");
+
+ }
+//This will only run if the statement above is not true or if some part of the statement applies here. Which is any height taller than 2
+  else {
+    document.write(pokemonList[i].name + ": height is : " + pokemonList[i].height +  " - Wow! that is big. " + " ");
+  }
+}
+
+ 
+
+
