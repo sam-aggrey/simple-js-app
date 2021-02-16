@@ -66,7 +66,7 @@ for (let i=0; i < pokemonList.length; i++){
 // if true then run the code it should run the code in that bracket. If not true, then move to the next stamemet
     
   if (pokemonList[i].height < 2){
-    document.write(pokemonList[i].name + ": height is : " + pokemonList[i].height  +  " ");
+    document.write("<p>" + pokemonList[i].name + ": height is : " + pokemonList[i].height  +  " " + "</p>");
 
  }
 //This will only run if the statement above is not true or if some part of the statement applies here. Which is any height taller than 2
