@@ -58,22 +58,39 @@ let pokemonList=[
     
 ];
 
+// IIFE pokemonRepository
+let pokemonRepository = (function () {
+   return {
+      add: function(pokemon) {
+        pokemonList.push(pokemon);
+      },
+      getAll: function() {
+        return pokemonList;
+      }
+    };
+  })();
+
+  pokemonRepository.add({ name: 'Ferrothorn', height: 1, types:['grass', 'mineral'] });
+  pokemonRepository.getAll(); 
+
+  // IIFE function to loop through the  pokemonList array 
+(function () {
+    pokemonList.forEach(function(pokemon) {
+        let pokemonName = pokemon.name
+        let pokemonHeight = pokemon.height
+        /* This checks to see if a pokemon height is greater than or equal to 2 the add wow, that's big. Otherwise it should just print theri names and hight */
+        if(pokemonHeight >= 2) {
+            document.write("<p>" + pokemonName + ' (height : ' + pokemonHeight + ')' + ' - Wow, that\'s big!' + "</p>"); 
+        } else {
+            document.write("<p>" + pokemonName + ' (height : ' + pokemonHeight + ')' + "</p>"); 
+        }
+            
+        });
+})();
 
 
-for (let i=0; i < pokemonList.length; i++){
-    
-// The loop first look for the statement in the first if statement and check if its true as iitialized above
-// if true then run the code it should run the code in that bracket. If not true, then move to the next stamemet
-    
-  if (pokemonList[i].height < 2){
-    document.write("<p>" + pokemonList[i].name + ": height is : " + pokemonList[i].height  +  " " + "</p>");
 
- }
-//This will only run if the statement above is not true or if some part of the statement applies here. Which is any height taller than 2
-  else {
-    document.write(pokemonList[i].name + ": height is : " + pokemonList[i].height +  " - Wow! that is big. " + " ");
-  }
-}
+
 
  
 
