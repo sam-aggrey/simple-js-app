@@ -1,4 +1,5 @@
-let pokemonList=[
+let pokemonRepository = (function () {
+  let pokemonList=[
     
     {
         name: 'Charmander',
@@ -58,40 +59,66 @@ let pokemonList=[
     
 ];
 
-// IIFE pokemonRepository
-let pokemonRepository = (function () {
-   return {
-      add: function(pokemon) {
-        pokemonList.push(pokemon);
-      },
-      getAll: function() {
-        return pokemonList;
-      }
-    };
-  })();
+  function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      pokemonList.push(pokemon);
+    } else {
+      console.log("pokemon is not correct");
+    }
+  }
+  function getAll() {
+    return pokemonList;
+  }
+    
+   
 
-  pokemonRepository.add({ name: 'Ferrothorn', height: 1, types:['grass', 'mineral'] });
-  pokemonRepository.getAll(); 
-
-  // IIFE function to loop through the  pokemonList array 
-(function () {
-    pokemonList.forEach(function(pokemon) {
-        let pokemonName = pokemon.name
-        let pokemonHeight = pokemon.height
-        /* This checks to see if a pokemon height is greater than or equal to 2 the add wow, that's big. Otherwise it should just print theri names and hight */
-        if(pokemonHeight >= 2) {
-            document.write("<p>" + pokemonName + ' (height : ' + pokemonHeight + ')' + ' - Wow, that\'s big!' + "</p>"); 
-        } else {
-            document.write("<p>" + pokemonName + ' (height : ' + pokemonHeight + ')' + "</p>"); 
-        }
-            
-        });
+    
+  function addListItem(pokemon){
+    /* created a variable and assigned it to the class Pokemon-list which can be found in the html */
+    let pokemonList = document.querySelector(".pokemon-list");
+    /* Created a variable and assigned it to the new variable created which is li */
+    let listpokemon = document.createElement("li");
+    /* Created a button and with a name button */
+    let button = document.createElement("button");
+    /* Added the name of the pokemon to the button */
+    button.innerText = pokemon.name;
+    /* Add the class for the button which you have also styled using css */
+    button.classList.add("button-class");
+    /* put the button inside the li */
+    listpokemon.appendChild(button);
+    /* put the li inside the ul created */
+    pokemonList.appendChild(listpokemon);
+    button.addEventListener('click', function () {
+      showDetails(pokemon);
+    });
+      
+  }
+    
+    function showDetails(pokemon){
+      
+        console.log(pokemon.name);
+        
+    }
+   
+   
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails
+   
+  };
 })();
 
+pokemonRepository.add({ name: 'Ferrothorn', height: 1, types:['grass', 'mineral'] });
 
+console.log(pokemonRepository.getAll());
 
-
-
- 
-
-
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
