@@ -12,9 +12,9 @@
                         pokemonList.push(pokemon);
                     }else {
                         console.log("pokemon is not correct");
-                    }
+            }
 
-                }
+     }
 
          function getAll() {
            return pokemonList;
