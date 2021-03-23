@@ -4,17 +4,50 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   
     <link rel="stylesheet" href="CSS/style.css">
     <title>My first JS App</title>
   </head>
   <body>
-  <ul class="pokemon-list"></ul>
+  
+
+  <ul class="list-group"></ul>
   <button id="show-modal"></button>
     <button id="show-dialog"></button>
     <div id="modal-container"></div>
+
+    
+    
+    
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    
   
     <script src="JS/promise-polyfill.js"></script>
     <script src="JS/fetch-polyfill.js"></script>
+      
   <script src="JS/script.js"></script>
   </body>
 
