@@ -52,9 +52,13 @@
           console.error(e);
         });
       }
+        
+        
+        
+        
       function addListItem(pokemon){
         /* created a variable and assigned it to the class Pokemon-list which can be found in the html */
-        let pokemonList = document.querySelector(".pokemon-list");
+        let pokemonList = document.querySelector(".list-group");
         /* Created a variable and assigned it to the new variable created which is li */
         let listpokemon = document.createElement("li");
         /* Created a button and with a name button */
@@ -62,23 +66,29 @@
         /* Added the name of the pokemon to the button */
         button.innerText = pokemon.name;
         /* Add the class for the button which you have also styled using css */
-        button.classList.add("button-class");
+        button.classList.add("btn-outline-secondary");
+        
+        listpokemon.classList.add("group-list-item");
 
         /* put the button inside the li */
         listpokemon.appendChild(button);
         /* put the li inside the ul created */
         pokemonList.appendChild(listpokemon);
-        button.addEventListener('click', function () {
+        button.addEventListener('click',  function () {
        showDetails(pokemon);
         });
 
       }
         
-        // Function to enable specifying a title and content
+
+        
+         //Function to enable specifying a title and content
       function showModal(pokemon) {
-        // Clear all existing modal content
+        // Clear all existing modal content 
         modalContainer.innerHTML = '';
-        let modal = document.createElement('div');
+          
+          
+        let modal = document.createElement('modal-body');
         modal.classList.add('modal');
         // Add the new modal content
         let closeButtonElement = document.createElement('button');
@@ -98,16 +108,22 @@
         modalContainer.appendChild(modal);
         modalContainer.classList.add('is-visible');
       }
+//     
+        
+        
     // Function to close the modal
-      function hideModal() {
-        modalContainer.classList.remove('is-visible');
-          
-          if (dialogPromiseReject) {
-              dialogPromiseReject();
-              dialogPromiseReject = null;
-            }
+     let dialogPromiseReject; // This can be set later, by showDialog
 
-      }
+function hideModal() {
+  let modalContainer = document.querySelector('#modal-container');
+  modalContainer.classList.remove('is-visible');
+
+  if (dialogPromiseReject) {
+    dialogPromiseReject();
+    dialogPromiseReject = null;
+  }
+}
+        
       // hide the modal if it’s visible by pressing the ESC key
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
@@ -115,7 +131,7 @@
         }
       });
         
-      modalContainer.addEventListener('click', (e) => {
+       modalContainer.addEventListener('click', (e) => {
         // Since this is also triggered when clicking INSIDE the modal
         // We only want to close if the user clicks directly on the overlay
         let target = e.target;
@@ -124,6 +140,8 @@
         }
       });
 
+       
+ 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
         showModal(pokemon);
