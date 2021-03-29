@@ -4,9 +4,23 @@ ul{
     list-style: none;
 }
 
+.list-group{
+ 
+  
+   
+   margin-top: 20px;
+   
+}
+
+.col-12{
 
 
+   
+    
+}
 
+
+/*
 .modal {
   margin: auto;
   display: inline-block;
@@ -39,6 +53,6 @@ ul{
 }
 
 #modal-container.is-visible {
-  /* CSS for modal container - add your own desired CSS styles here */
+   CSS for modal container - add your own desired CSS styles here 
   display: block;
-}
+}*/
