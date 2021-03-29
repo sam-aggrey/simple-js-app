@@ -84,8 +84,8 @@ let pokemonRepository = (function () {
 // Function to filter array of objects
   function filterPokemon(value, property) {
     return pokemonList.filter(function (currentElement) {
-      return currentElement[property] === value
-    })
+      return currentElement[property] === value;
+    });
   }
 
 // Function to add items on the list with button for each item
