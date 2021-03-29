@@ -1,12 +1,24 @@
+# Project Name:
 
-
+Achievement 1 Project: JavaScript App (Pokédex)
 
 # Project Link:
+https://sam-aggrey.github.io/simple-js-app/
 
 # Project Objective:
 
+To build a small web application with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of data points in detail.
 
 # Project Key Features:
+
+Load data from an external source (API)
+View a list of items
+On user action (e.g., by clicking on a list item), view details for that item
+
+# Tech Stack:
+1. html
+2. css
+3. Javascript
 
 # Exercise Breakdown:
 
