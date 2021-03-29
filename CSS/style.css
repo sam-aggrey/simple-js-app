@@ -1,58 +1,77 @@
-
-
-ul{
-    list-style: none;
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  /* margin: 2rem; */
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
-.list-group{
- 
-  
-   
-   margin-top: 20px;
-   
-}
-
-.col-12{
-
-
-   
-    
-}
-
-
-/*
-.modal {
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: #fff;
-  padding: 15px;
-  width: 100%;
-  max-width: 700px;
-  text-align: left;
-}
-
-.modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: #777;
-  text-decoration: underline;
-}
-
-.modal h1 {
-  margin-top: 0;
-}
-
-.modal p {
-  margin-bottom: 0;
-}
-#modal-container {
-  display: none;
-}
-
-#modal-container.is-visible {
-   CSS for modal container - add your own desired CSS styles here 
+#loadingmessage.is-visible {
+  text-align: center;
+  border-radius: 10px;
+  background: white;
+  border-color: #061539;
+  border-style: groove;
+  margin: auto 100px;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  /* to show it above other content */
+  z-index: 999;
   display: block;
-}*/
+}
+
+h1,
+.pokemon-list {
+  margin-left: 0;
+  text-align: center;
+  padding-left: 0;
+}
+
+ul {
+  list-style: none;
+  margin-top: 80px;
+}
+
+li {
+  padding-top: 5px;
+}
+
+.button-class {
+  width: 200px;
+  background-color: #4285f4;
+  border: none;
+  color: #161d6f;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #161d6f;
+  color: white;
+  border: 2px solid #eee;
+  list-style-type: none;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button-class:hover {
+  background-color: #296CDB;
+}
+
+.button-class:focus {
+  background-color: #0F52C1;
+  outline: 0;
+}
+
+.button-class:active {
+  background-color: #0039A8;
+}
+
+.modal-body{
+  text-align: center;
+}
