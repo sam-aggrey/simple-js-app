@@ -3,7 +3,8 @@ let pokemonRepository = (function () {
   // Placed in the IIFE to make it accessible to all functions 
       let modalContainer = document.querySelector('#modal-container');
       let pokemonList=[];
-      let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20";
+      let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=120";
+    
 
       function add(pokemon) {
 
@@ -27,8 +28,8 @@ let pokemonRepository = (function () {
           let pokemon = {
             name: item.name,
             detailsUrl: item.url,
-
-          };
+     };
+              
           add(pokemon);
         });
       }).catch(function (e) {
@@ -57,28 +58,28 @@ let pokemonRepository = (function () {
       let pokemonList = document.querySelector(".list-group");
       /* Created a variable and assigned it to the new variable created which is li */
       let listpokemon = document.createElement("li");
+      ;
+      listpokemon.classList.add("col-12");
+      listpokemon.classList.add("col-sm-4");
+     
       /* Created a button and with a name button */
       let button = document.createElement("button");
-        button.classList.add('btn','btn-outline-secondary');
+        button.classList.add('btn');
+        button.classList.add('btn-outline-secondary');
         button.setAttribute('type', 'button');
         button.setAttribute('data-bs-toggle', 'modal');
         button.setAttribute('data-bs-target', '#exampleModal');
-     
+        button.classList.add('btn-block');
         
-        
-    // Add Pokemon details/content in the body
+      // Add Pokemon details/content in the body
       button.innerText = pokemon.name;
-      /* Add the class for the button which you have also styled using css */
-     // button.classList.add("btn-outline-secondary");
-      
-      listpokemon.classList.add("group-list-item");
-
-      /* put the button inside the li */
+     //listpokemon.classList.add("group-list-item");
+       /* put the button inside the li */
       listpokemon.appendChild(button);
       /* put the li inside the ul created */
       pokemonList.appendChild(listpokemon);
       button.addEventListener('click',  function () {
-     showDetails(pokemon);
+      showDetails(pokemon);
       });
 
     }
@@ -108,8 +109,7 @@ let pokemonRepository = (function () {
        //attach image element to modal
        modal.appendChild(img);
    
-
-    }
+ }
     
       
       function showDetails(pokemon) {
@@ -135,3 +135,5 @@ let pokemonRepository = (function () {
       pokemonRepository.addListItem(pokemon);
     });
   });
+
+
